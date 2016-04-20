@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 3</title>
+	<meta charset="utf-8">
+	
+	
+	<style type="text/css">
+#wrapper{
+	width:80%; 
+	margin:auto;
+	font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+
+	}
+#main{
+	float:left;
+	width:100%;
+	background-color: #EEEEEE;
+	padding: 30px;
+}
+
+#art2{
+	display:block;
+	padding: 10px;
+	padding-right: 50px;
+	padding-left: 30px;
+	background-color:#202F51; 
+	color: white;
+	
+}
+
+#btn2{
+	width: 125px; 
+	height: 30px; 
+	border: #EA9C09 medium solid ; 
+	background-color:#202F51; 
+	color:white;
+	font-weight: bold;
+	margin-left: 45%;
+	margin-top:10%;
+}
+input{
+	height: 30px;
+}
+input[id^="txt1"]{
+	width: 70%;
+}
+#tbl1{
+	width: 70%;
+	margin: 0 auto;
+	text-align: left;
+}
+a#a2{
+	text-decoration: none;
+	font-weight: bold;
+	color:white; 
+}
+#first{
+	width:40%;
+	margin:0 auto;
+	text-align: center;
+}
+
+	</style>
+	<script type="text/javascript">
+	function setDetail(){
+			localStorage.setItem('email',document.getElementById('txt1email').value);
+			localStorage.setItem('psw',document.getElementById('txt1psw').value);
+			localStorage.setItem('url',document.getElementById('txt1url').value);
+			localStorage.setItem('date',document.getElementById('txt1date').value);
+			localStorage.setItem('month',document.getElementById('txt1month').value);
+			localStorage.setItem('week',document.getElementById('txt1week').value);
+			localStorage.setItem('time',document.getElementById('txt1time').value);
+			localStorage.setItem('age',document.getElementById('txt2out').value);
+			localStorage.setItem('color',document.getElementById('txt2color').value);
+			localStorage.setItem('hobbies',document.getElementById('txt2hobbies').value);
+			alert('details logged into local sorage');
+	}
+
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+	<div id="main">
+	
+		<article id="art2">
+
+			<form  id="first" method = "GET" action = "" onsubmit="setDetail()" autocomplete = "off">
+			<p>	
+ 			<label for = "title">Fill The Form</label>
+			</p>
+			<p>
+			<input required type = "email" id = "txt1email" name = "email" placeholder = "Email">
+			</p>
+			<p>
+   			<input required type = "password" id = "txt1psw" name  = "psw" placeholder="Password here" pattern="(/^(0-9a-zA-Z){6,}$/" >
+   			</p>
+   			<p>
+   			<input required type = "url" id = "txt1url" name  = "url" placeholder="Your Project Url" pattern="https?://.+">
+   			</p>
+   			<p>
+   			<input required type = "date" id = "txt1date" name  = "date" placeholder="Project completion date">
+   			</p>
+   			<p>
+   			<input required type = "month" id = "txt1month" name  = "month" placeholder="Month">
+   			</p>
+   			<p>
+   			<input required type = "week" id = "txt1week" name  = "week" placeholder="week">
+   			</p>
+   			<p>
+			
+			<input required type = "time" placeholder="Time" id = "txt1time">
+			</p>
+			<table id="tbl1">
+				<tr>
+					<td><label for = "age">Age:</label></td>
+					<td><input required id="txt2age" type="range" min="18" max="60" value="5" onchange="updateAge(this.value);">
+						<input type="text" id="txt2out" value=""></td>
+
+				</tr>
+				<tr>
+					<td><label for = "color">Select Color:</label></td>
+					<td><input required id="txt2color" name="color" type="color"></td>
+				</tr>
+				<tr>
+					<td><label for = "hobbies">Hobbies:</label></td>
+					<td><input required id="txt2hobbies" name="txt2hobbies" list="txt2hobbies">
+					<datalist id="txt2hobbies">
+						<option value="Cricket">
+						<option value="Drawing">
+						<option value="Gardening">
+						<option value="Oragami">
+						<option value="Cooking">
+					</datalist>
+					</td>
+				</tr>
+
+
+			</table>
+			
+		<p>
+				<input id="btn" type ="submit" value = "Submit Form">
+		</p>
+		</form>
+		</article>
+
+<script type="text/javascript">
+function updateAge(val){
+	document.getElementById("txt2out").value=val;
+}
+</script>
+
+
+</div>
+</div>
+
+</body>
+</html>
